@@ -12,6 +12,36 @@ export class AppComponent {
 
   CARD_PATTERNS_TYPE: Map<string, any> = new Map([
     [SslCardType.AMEX, [34, 37]],
+    [SslCardType.DINERS, [[300, 305], 36, 38, 39]],
+    [
+      SslCardType.MASTERCARD,
+      [
+        [506779, 508999], //maestro
+        [51, 55],
+        [560000, 589999], //maestro
+        [58],
+        [600000, 627779], //maestro
+        [627781, 636296], //maestro
+        [636298, 636367], //maestro
+        [636369, 650030], //maestro
+        [650034], //maestro
+        [650052, 650404], //maestro
+        [650440, 650484], //maestro
+        [650539, 650540], //maestro
+        [650599, 650699], //maestro
+        [650719], //maestro
+        [650728, 650900], //maestro
+        [650979, 651651], //maestro
+        [651678, 654999], //maestro
+        [655020], //maestro
+        [655059, 699999], //maestro
+        [2221, 2229],
+        [223, 229],
+        [23, 26],
+        [270, 271],
+        2720,
+      ],
+    ],
     [SslCardType.VISA, [4]],
     [
       SslCardType.ELO,
@@ -43,22 +73,6 @@ export class AppComponent {
         [655021, 655058],
       ],
     ],
-    [SslCardType.DINERS, [[300, 305], 36, 38, 39]],
-    [
-      SslCardType.MASTERCARD,
-      [
-        [500000, 509999], //maestro
-        [51, 55],
-        [560000, 589999], //maestro
-        [58],
-        [600000, 699999], //maestro
-        [2221, 2229],
-        [223, 229],
-        [23, 26],
-        [270, 271],
-        2720,
-      ],
-    ],
   ]);
 
   matchBrand(newValue: any): void {
@@ -68,9 +82,6 @@ export class AppComponent {
       },
       {
         name: SslCardType.DINERS,
-      },
-      {
-        name: SslCardType.ELO,
       },
       {
         name: SslCardType.MASTERCARD,
@@ -91,8 +102,8 @@ export class AppComponent {
 export enum SslCardType {
   AMEX = 'Amex',
   DINERS = 'Diners',
-  ELO = 'Elo',
   MASTERCARD = 'Mastercard',
+  ELO = 'Elo',
   VISA = 'Visa',
 }
 
