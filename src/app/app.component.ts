@@ -73,6 +73,11 @@ export class AppComponent {
         [655021, 655058],
       ],
     ],
+    [
+      SslCardType.HIPERCARD, [
+        [606282, 637095]
+      ]
+    ]
   ]);
 
   matchBrand(newValue: any): void {
@@ -84,11 +89,15 @@ export class AppComponent {
         name: SslCardType.DINERS,
       },
       {
+        name: SslCardType.HIPERCARD,
+      },
+      {
         name: SslCardType.MASTERCARD,
       },
       {
         name: SslCardType.VISA,
       },
+
     ];
     for (let index = 0; index < brands.length; index++) {
       if (matches(newValue, this.CARD_PATTERNS_TYPE.get(brands[index].name))) {
@@ -105,6 +114,7 @@ export enum SslCardType {
   MASTERCARD = 'Mastercard',
   ELO = 'Elo',
   VISA = 'Visa',
+  HIPERCARD = 'Hipercard'
 }
 
 function matchesRange(
